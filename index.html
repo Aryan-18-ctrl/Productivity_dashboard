@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Dashbord</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header >
+        <nav>
+            <div class="dashboardName" ><h1>
+                Productivity Dashboard
+            </h1>
+        </div>
+        <div class="nav-icon">
+            <span><i class="fa-regular fa-sun" style="width: 100%; background: #00000000 ;height:100%;"></i></span>
+                        <span><i class="fa-brands fa-github"></i></i></span>
+
+        </div>
+
+        </nav>
+    </header>
+ <main>
+
+    <!-- dashboard section -->
+
+<section id="dashboard"  class="" >
+<div class="date-and-time">
+
+    <div class="datetime-div card">
+
+        <!-- Time -->
+        <div class="time-box">
+            <h1 id="time">10:35</h1>
+            <p id="date">Friday, 5 July</p>
+        </div>
+
+        <!-- Weather -->
+        <div class="weather-box">
+
+            <img id="weatherIcon" src="./assets/weather.png" alt="Weather">
+
+            <div class="weather-info">
+
+                <h2><span id="temp">29</span>°C</h2>
+
+                <p id="condition">Sunny</p>
+
+<h4>
+    <i class="fa-solid fa-location-dot"></i>
+    <span id="city">Kanpur</span>
+</h4>
+                <div class="weather-extra">
+
+                    <span><i class="fa-solid fa-water"></i> <span id="humidity">68%</span></span>
+
+                    <span><i class="fa-solid fa-wind"></i> <span id="wind">12 km/h</span></span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- feature cards  -->
+    <div class="allfeatures scroll">
+        <div class="feature todo">
+    
+        <div class="img-div">
+            <img src="./assets/work-order.png" alt="feature-img">
+        </div>
+        <h3>Todo</h3>
+</div>
+
+
+<!-- planner -->
+ <div class="feature planner">
+    
+        <div class="img-div">
+            <img src="./assets/tasks.png" alt="feature-img">
+        </div>
+        <h3>Planner</h3>
+</div>
+<!-- Daily goals -->
+
+ <div class="feature dailygoals">
+    
+        <div class="img-div">
+            <img src="./assets/goal.png" alt="feature-img">
+        </div>
+        <h3>Daily Goals</h3>
+</div>
+<!-- pomodoro -->
+  <div class="feature pomodorocard">
+    
+        <div class="img-div">
+            <img src="./assets/technique.png" alt="feature-img">
+        </div>
+        <h3>Pomodoro</h3>
+</div>
+
+<!-- Motivation Quotes -->
+
+ <div class="feature quotess">
+    
+        <div class="img-div">
+            <img src="./assets/motivation.png" alt="feature-img">
+        </div>
+        <h3>Motivation Quotes</h3>
+</div>
+
+    </div>
+
+
+</section>
+
+<!-- Todo -->
+
+<section class="todoSection hidden">
+        <button class="icon-back">
+    <i class="fa-solid fa-arrow-left"></i>
+</button>
+    <div class="taskCreaterTodo">
+        
+        <form>
+            
+            <input  class="todoinput" type="text" placeholder="Enter task...">
+<textarea ></textarea>
+
+<label>
+    <input  type="checkbox"> Mark as Important
+</label>
+
+            <button>Add</button>
+
+        </form>
+
+    </div>
+    <div class="resultTodo">
+<div class="taskresultdiv">
+<div class="tasklist-container">
+   <!-- <div class="task-list">
+    <div class="imp-badge">imp</div>
+     <p class="task-text">Eat Food</p>
+    <p class="task-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque perferendis placeat itaque.</p>
+    <div class="btn-div">
+        <button class="completed">Complete</button>
+        <button class="del">Delete</button>
+    </div>
+   </div> -->
+</div>
+</div>
+    </div>
+
+
+</section>
+
+
+<!-- planner section -->
+
+<section class="plannerSection hidden">
+  <button class="icon-back" >
+    <i class="fa-solid fa-arrow-left"></i>
+</button>
+    <h2 class="planner-heading">📅 Daily Planner</h2>
+
+    <div class="planenr-container">
+
+        <div class="plannerdiv">
+            <p>08:00 AM - 09:00 AM</p>
+            <input type="text" data-time="08:00 AM - 09:00 AM" placeholder="Your plan...">
+        </div>
+
+        <div class="plannerdiv">
+            <p>09:00 AM - 10:00 AM</p>
+            <input type="text" data-time="09:00 AM - 10:00 AM" placeholder="Your plan...">
+        </div>
+
+        <div class="plannerdiv">
+            <p>10:00 AM - 11:00 AM</p>
+            <input type="text" data-time="10:00 AM - 11:00 AM" placeholder="Your plan...">
+        </div>
+
+        <div class="plannerdiv">
+            <p>11:00 AM - 12:00 PM</p>
+            <input type="text" data-time="11:00 AM - 12:00 PM" placeholder="Your plan...">
+        </div>
+
+        <div class="plannerdiv">
+            <p>12:00 PM - 01:00 PM</p>
+            <input type="text" data-time="12:00 PM - 01:00 PM" placeholder="Your plan...">
+        </div>
+
+        <div class="plannerdiv">
+            <p>01:00 PM - 02:00 PM</p>
+            <input type="text" data-time="01:00 PM - 02:00 PM" placeholder="Your plan...">
+        </div>
+
+        <div class="plannerdiv">
+            <p>02:00 PM - 03:00 PM</p>
+            <input type="text" data-time="02:00 PM - 03:00 PM" placeholder="Your plan...">
+        </div>
+
+        <div class="plannerdiv">
+            <p>03:00 PM - 04:00 PM</p>
+            <input type="text" data-time="03:00 PM - 04:00 PM" placeholder="Your plan...">
+        </div>
+
+        <div class="plannerdiv">
+            <p>04:00 PM - 05:00 PM</p>
+            <input type="text" data-time="04:00 PM - 05:00 PM" placeholder="Your plan...">
+        </div>
+
+        <div class="plannerdiv">
+            <p>05:00 PM - 06:00 PM</p>
+            <input type="text" data-time="05:00 PM - 06:00 PM" placeholder="Your plan...">
+        </div>
+
+        <div class="plannerdiv">
+            <p>06:00 PM - 07:00 PM</p>
+            <input type="text" data-time="06:00 PM - 07:00 PM" placeholder="Your plan...">
+        </div>
+
+        <div class="plannerdiv">
+            <p>07:00 PM - 08:00 PM</p>
+            <input type="text" data-time="07:00 PM - 08:00 PM" placeholder="Your plan...">
+        </div>
+
+        <div class="plannerdiv">
+            <p>08:00 PM - 09:00 PM</p>
+            <input type="text" data-time="08:00 PM - 09:00 PM" placeholder="Your plan...">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!--  goals -->
+
+<section class="sectionGoal hidden">
+<button class="icon-back">
+    <i class="fa-solid fa-arrow-left"></i>
+</button>
+    <h2>🎯 Today's Goals</h2>
+
+    <div class="goal-div">
+
+        <div class="goal-input">
+
+            <input type="text" placeholder="Enter your goal...">
+
+            <button class="addgoalBtn">Add Goal</button>
+
+        </div>
+
+        <div class="goal-list"> </div>
+
+        <h3 class="goal-progress">
+            Completed <span>0</span> / <span>0</span>
+        </h3>
+
+    </div>
+
+</section>
+
+<!--quote section  -->
+<section class="quote hidden">
+  <button class="icon-back">
+    <i class="fa-solid fa-arrow-left"></i>
+</button>
+    <h2>Daily Motivation</h2>
+ 
+
+    <div class="quotediv">
+        <h3 id="quoteText">
+Know your value, accept nothing but the best.
+        </h3>
+
+        <p id="author">— Unknown</p>
+    </div>
+
+    <button class="mainBtn">Generate Quote</button>
+</section>
+
+<!-- Pomodoro --> 
+
+<section class="pomodoro hidden">
+       <button class="icon-back">
+    <i class="fa-solid fa-arrow-left"></i>
+</button>
+            <h1>Pomodoro</h1>
+
+    <diV class="mainpomo-div">
+
+        <div>
+            <h2>25:00</h2>
+            <h3></h3>
+        </div>
+
+        <div class="btnDiv">
+<button class="start">Start</button>
+<button class="pause">Pause</button>
+<button class="reset">Reset</button>
+
+
+
+        </div>
+        <div>
+            <p>Completed sessions : <span> 0</span></p>
+
+        </div>
+
+    
+
+    </diV>
+
+<audio src="./assets/mixkit-correct-answer-tone-2870.wav" class="audio"></audio>
+</section>
+
+
+
+ </main>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+   <script src="script.js"></script> 
+</body>
+</html>
