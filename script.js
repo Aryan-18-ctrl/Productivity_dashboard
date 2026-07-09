@@ -601,22 +601,27 @@ sectionGoal.classList.add("hidden")
 allFeatures.addEventListener("click", (e) => {
     if (e.target.closest(".todo")) {
         showSection(todoSection);
+        document.title="todo"
     }
     else if (e.target.closest(".planner")) {
         showSection(plannerSection);
+                document.title="Daily planner"
+
     }
     else if (e.target.closest(".dailygoals")) {
         showSection(sectionGoal);
+                document.title="Daily Goals"
+
     }
     else if (e.target.closest(".pomodorocard")) {
         showSection(pomodoro);
     }
     else if (e.target.closest(".quotess")) {
         showSection(quote);
+                document.title="Motivational quotes"
+
     }
-    else if (e.target.closest(".weather")) {
-        showSection(weatherSection);
-    }
+
 });
 
 
