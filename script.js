@@ -119,6 +119,13 @@ fetchWeatherData();
 
 let taskListArr=JSON.parse(localStorage.getItem("todoData")) || []
 
+ function noTask(){
+  if(taskListArr.length==0){
+   tasklistContainer.innerHTML="<p class='no-task'>No task yet<p>"
+} 
+
+}
+noTask()
 
 function addTaskContainer(){
    tasklistContainer.innerHTML=""
@@ -137,10 +144,14 @@ ${!elem.isCompleted?`<button class="completed" data-task-id="${elem.id}">Mark Co
     </div>
    </div>`
   })
+  
+noTask()
 
 }
+  addTaskContainer();
 
-addTaskContainer();
+
+
 
 function handleSublit(e){
   e.preventDefault();
@@ -172,10 +183,10 @@ localStorage.setItem("todoData",JSON.stringify(taskListArr))
 
 addTaskContainer();
 showToast("Task Added successfully ✅","#15b371")
-
 todoForm.reset();
 
 }
+
 
 todoForm.addEventListener("submit",handleSublit)
 
@@ -189,7 +200,9 @@ let id = Number(e.target.dataset.taskId);
 localStorage.setItem("todoData",JSON.stringify(taskListArr))
 
 showToast("Task Deleted 🗑️","#C5172E");
+console.log("ji")
 addTaskContainer()
+
 }
 
 function handleComplete(e,isComp){
@@ -199,7 +212,9 @@ let task = taskListArr.find((elem) => elem.id === ids);
 
 task.isCompleted=isComp
 addTaskContainer()
+
 localStorage.setItem("todoData",JSON.stringify(taskListArr));
+
 
 }
 
