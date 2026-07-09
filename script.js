@@ -36,19 +36,6 @@ const totalGoalCount = document.querySelector(".goal-progress span:last-child");
 
 const themeBtn = document.querySelector(".fa-sun");
 
-themeBtn.addEventListener("click", () => {
-
-    document.body.classList.toggle("dark");
-
-    if (document.body.classList.contains("dark")) {
-        themeBtn.classList.remove("fa-sun");
-        themeBtn.classList.add("fa-moon");
-    } else {
-        themeBtn.classList.remove("fa-moon");
-        themeBtn.classList.add("fa-sun");
-    }
-
-});
 
 
 //** ------- date time 
@@ -184,6 +171,7 @@ taskListArr.push({
 localStorage.setItem("todoData",JSON.stringify(taskListArr))
 
 addTaskContainer();
+showToast("Task Added successfully ✅","#15b371")
 
 todoForm.reset();
 
@@ -200,6 +188,7 @@ let id = Number(e.target.dataset.taskId);
 })
 localStorage.setItem("todoData",JSON.stringify(taskListArr))
 
+showToast("Task Deleted 🗑️","#C5172E");
 addTaskContainer()
 }
 
@@ -238,8 +227,20 @@ handleComplete(e,true)
 
 });
 
+// show toast
+let intervalIds;
+function showToast(msg,color){
+  clearTimeout(intervalIds)
+    document.querySelector(".toast").textContent=msg
+    document.querySelector(".toast").style.backgroundColor=color
+  document.querySelector(".toast").classList.add("show")
+     intervalIds=   setTimeout(()=>{
+        document.querySelector(".toast").classList.remove("show")
 
-//  planner ----
+        },1000)
+}
+
+// ***---------- planner ----
 
 let plannerData =JSON.parse(localStorage.getItem("allPlnnerData")) || [];
   let timer;
@@ -252,7 +253,7 @@ function saveInput(e,elems){
 timer= setTimeout(()=>{
 
  let existed= plannerData.find((elem)=>elem.timeId ==timeId)
-
+ showToast("Plan Autosaved ✅","#15b371");
 if(plan.trim() === ""){
     plannerData = plannerData.filter(
         item => item.timeId !== timeId
@@ -261,12 +262,15 @@ if(plan.trim() === ""){
     let existed = plannerData.find(
         item => item.timeId === timeId
     );
-
+        
     if(existed){
         existed.plan = plan;
     }else{
         plannerData.push({ plan, timeId });
     }
+
+
+
 }
 
 localStorage.setItem("allPlnnerData",JSON.stringify(plannerData))
@@ -301,7 +305,7 @@ plannerInput.forEach((elem)=>{
 
 })
 
-// goal--------
+// **-------------goal--------
 let goalDataArr=JSON.parse(localStorage.getItem("goalData") ) || []
 
 function renderGoals() {
@@ -353,6 +357,7 @@ goalDataArr.push({
 localStorage.setItem("goalData",JSON.stringify(goalDataArr))
 renderGoals()
         updateGoalProgress()
+    showToast("Goal addes successfully","#06D001")
 
 goalInp.value=""
 }
@@ -369,6 +374,7 @@ let id=Number(e.target.dataset.goalId);
 localStorage.setItem("goalData",JSON.stringify(goalDataArr))
 
 renderGoals()
+    showToast("Goal deleted  🗑️","#F5004F")
 
 }
 
@@ -414,11 +420,12 @@ goalList.addEventListener("click", (e) => {
 
 });
 
-//  progress -------
+// *----- progress -------
+
 function showConfetti() {
     confetti({
-        particleCount: 180,
-        spread: 100,
+        particleCount: 100,
+        spread: 200,
         origin: { y: 0.6 }
     });
 }
@@ -632,3 +639,36 @@ document.addEventListener("click", (e) => {
     }
 });
 
+
+
+// mode 
+
+let savedTheme =localStorage.getItem("theme") || "";
+
+if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+    themeBtn.classList.remove("fa-sun");
+    themeBtn.classList.add("fa-moon");
+
+} else {
+    document.body.classList.remove("dark");
+    themeBtn.classList.remove("fa-moon");
+    themeBtn.classList.add("fa-sun");
+}
+
+
+themeBtn.addEventListener("click",()=>{
+  document.body.classList.toggle("dark");
+   if (document.body.classList.contains("dark")) {
+    themeBtn.classList.remove("fa-sun")
+        themeBtn.classList.add("fa-moon")
+
+        localStorage.setItem("theme", "dark");
+    } else {
+          themeBtn.classList.remove("fa-moon")
+        themeBtn.classList.add("fa-sun")
+        localStorage.setItem("theme", "light");
+    }
+
+
+})
