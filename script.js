@@ -132,7 +132,7 @@ taskListArr.forEach((elem)=>{
     <p class="task-description">${elem.description}</p>
     <div class="btn-div">
   
-${!elem.isCompleted?`<button class="completed" data-task-id="${elem.id}">Complete</button>`:`<button class="undo" data-task-id="${elem.id}">Undo complete</button>`}
+${!elem.isCompleted?`<button class="completed" data-task-id="${elem.id}">Mark Complete</button>`:`<button class="undo" data-task-id="${elem.id}">Undo complete</button>`}
         <button class="del" data-task-id="${elem.id}">Delete</button>
     </div>
    </div>`
@@ -199,7 +199,8 @@ let task = taskListArr.find((elem) => elem.id === ids);
 
 task.isCompleted=isComp
 addTaskContainer()
-localStorage.setItem("todoData",JSON.stringify(taskListArr))
+localStorage.setItem("todoData",JSON.stringify(taskListArr));
+
 }
 
 
@@ -214,12 +215,16 @@ handleDelete(e)
     if (e.target.classList.contains("completed")) {
 
 handleComplete(e,true)
+showToast("Marked as complete ✅","#15b371")
+
 
     }
 
     if (e.target.classList.contains("undo")) {
 
     handleComplete(e,false)
+    showToast("undo complete ✅","#21c1cf")
+
 
 }
 
@@ -375,7 +380,7 @@ localStorage.setItem("goalData",JSON.stringify(goalDataArr))
 
 renderGoals()
     showToast("Goal deleted  🗑️","#F5004F")
-
+ 
 }
 
 
