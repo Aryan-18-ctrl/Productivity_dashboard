@@ -191,10 +191,12 @@ nav span{
     transition:var(--transition);
 }
 
-.fa-regular{
+.fa-regular,.gtiAnc{
     display: flex;
     justify-content: center;
     align-items: center;
+    color:var(--text-primary);
+    
 }
 nav span:hover{
 
