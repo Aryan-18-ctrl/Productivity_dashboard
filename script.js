@@ -37,12 +37,11 @@ const totalGoalCount = document.querySelector(".goal-progress span:last-child");
 const themeBtn = document.querySelector(".fa-sun");
 
 
+//** ------- date time-------
 
-//** ------- date time 
 
 function currDateTime(){
 let date=new Date();
-
 
 currTime.textContent=date.toLocaleTimeString();
 currDate.textContent=date.toDateString();
@@ -68,7 +67,7 @@ if (ampm === "AM") {
 ampm()
 
 
-//**-----weather fetch 
+//**-----weather fetch------
 
 
 async function fetchWeatherData() {
@@ -121,7 +120,13 @@ let taskListArr=JSON.parse(localStorage.getItem("todoData")) || []
 
  function noTask(){
   if(taskListArr.length==0){
-   tasklistContainer.innerHTML="<p class='no-task'>No task yet<p>"
+    tasklistContainer.innerHTML = `
+<div class="task-div">
+    <img class="no-task-img" src="./assets/no-task.png" alt="No Task">
+    <h3>No Tasks Yet</h3>
+    <p>You're all caught up. Add your first task to get started.</p>
+</div>
+`;
 } 
 
 }
@@ -200,7 +205,6 @@ let id = Number(e.target.dataset.taskId);
 localStorage.setItem("todoData",JSON.stringify(taskListArr))
 
 showToast("Task Deleted 🗑️","#C5172E");
-console.log("ji")
 addTaskContainer()
 
 }
@@ -357,10 +361,16 @@ function renderGoals() {
         </div>`;
     });
 
-    if(goalDataArr.length===0){
-      goalList.innerHTML = `<p class="no-task">🎯 No goals yet. Add your first goal!</p>`;
-        }
+
+  if(goalDataArr.length==0){
+    goalList.innerHTML = `
+<div class="task-div">
+    <img class="no-task-img" src="./assets/no-task.png" alt="No Task">
+<h3>Ready to Set a Goal?</h3>
+<p>Your journey starts with one goal. Create it now!</p></div>
+`
       }
+    }
 renderGoals()
 
 
