@@ -2121,6 +2121,6 @@ text-align: center;
     
 }
 .task-div p {
-    display: none;   
+    font-size: 10px;
 }
 }
