@@ -1731,6 +1731,7 @@ padding:14px ;
     font-size: 20px;
     color:var(--text-secondary);
     text-shadow: 0 2px 20px var(--primary);
+    text-align:center;
 
 }
 
@@ -1858,8 +1859,12 @@ nav span {
     width: 40px;
     height: 40px;
    
+    
 }
+.no-task{
+    font-size: 18px;
 
+}
 }
 
 
@@ -1899,6 +1904,12 @@ nav span {
         font-size: 14px;
     }
 }
+
+.no-task{
+font-size: 16px;
+
+}
+
 
 }
 
