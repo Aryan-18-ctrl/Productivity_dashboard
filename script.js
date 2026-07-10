@@ -247,7 +247,8 @@ showToast("Marked as complete ✅","#15b371")
 
 });
 
-// show toast
+//** show toast---------------
+
 let intervalIds;
 function showToast(msg,color){
   clearTimeout(intervalIds)
@@ -300,7 +301,7 @@ localStorage.setItem("allPlnnerData",JSON.stringify(plannerData))
 
 }
 
-//  show planner data from localStorage--
+// **show planner data from localStorage--
 
 
 
@@ -346,6 +347,7 @@ function renderGoals() {
     : `<button class="goal-complete" data-goal-id="${elem.id}">
             Complete
        </button>`
+
 }
 
                 <i class="fa-solid fa-trash goal-delete"
@@ -354,8 +356,11 @@ function renderGoals() {
             </div>
         </div>`;
     });
-}
 
+    if(goalDataArr.length===0){
+      goalList.innerHTML = `<p class="no-task">🎯 No goals yet. Add your first goal!</p>`;
+        }
+      }
 renderGoals()
 
 

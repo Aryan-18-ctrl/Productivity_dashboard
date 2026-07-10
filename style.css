@@ -11,9 +11,9 @@
 :root{
 
     /* Background */
+  --bg-Img:url("./assets/anders-jilden-cYrMQA7a3Wc-unsplash.jpg");
 
-    --body-bg:linear-gradient(135deg,#667eea,#764ba2,#4facfe);
-
+    --body-bg:transparent;
     --bg-primary:#f8fafc;
     --bg-primary2:rgba(24, 24, 24, 0.564);
     --bg-card:#ffffff;
@@ -70,30 +70,11 @@
     --bg-nav:rgba(86, 86, 86, 0.046);
 }
 
-html{
-    scroll-behavior: smooth;
-}
-
-body{
-    font-family: "Poppins", sans-serif;
-    min-height: 100vh;
-    width: 100%;
-    margin: 0;
-    color: var(--text-primary);
-    transition: var(--transition);
-    overflow-x: hidden;
-    overflow-y: auto;
-
-    background: var(--body-bg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
 body.dark{
 
-    
+      --bg-Img:url("./assets/night.jpg");
+    --body-bg:rgba(0, 0, 0, 0.6);
+
 
     --bg-primary:#111827;
     --bg-card:#1f2937;
@@ -113,6 +94,28 @@ body.dark{
 
     --border:#475569;
 }
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    color: var(--text-primary);
+    transition: var(--transition);
+    overflow-x: hidden;
+    overflow-y: auto;
+    background:var(--bg-Img);
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
 
 
 
@@ -219,9 +222,8 @@ nav span:hover{
     gap:20px;
     width:100%;
 height:calc(100vh - 82px);
-
     padding:20px 30px;
-    
+    background:var(--body-bg);
 }
 
 .hidden{
@@ -900,9 +902,6 @@ left:20px;
 
 /* todoSection */
 
-
-
-
 .todoSection{
 position:relative;
     width:100%;
@@ -913,10 +912,8 @@ position:relative;
     align-items: center;
     gap:20px;
     padding:40px;
-    overflow: hidden;
 
-    background:var(--bg-primary2);
-
+background: var(--bg-primary2) !important;;
 }
 
 
