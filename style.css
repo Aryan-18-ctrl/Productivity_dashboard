@@ -1325,7 +1325,7 @@ position: relative;
     max-width:1500px;
 
     margin:auto;
-
+overflow-y: auto;
     display:grid;
     grid-template-columns:repeat(2,1fr);
 
@@ -1428,8 +1428,8 @@ position: relative;
     padding:14px 18px;
 
     border-radius:12px;
-
-    border:1px solid rgba(255,255,255,.15);
+border:none;
+    border-bottom:4px solid rgba(255,255,255,.15);
 
     background:rgba(255,255,255,.08);
 
@@ -1751,7 +1751,7 @@ padding:14px ;
 .task-div p{
     max-width:280px;
     font-size:14px;
-    color:var(--text-secondary);
+    color:rgba(222, 222, 222, 0.486);
     line-height:1.5;
     margin:0;
 }
@@ -1767,10 +1767,7 @@ padding:14px ;
 
 
 
-
 /**----------  responsive ---------- */
-
-
 
 
 
@@ -2123,4 +2120,5 @@ text-align: center;
 .task-div p {
     font-size: 10px;
 }
+
 }
