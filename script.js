@@ -61,16 +61,7 @@ if (ampm === "AM") {
     document.body.style.backgroundImage = 'url("./assets/anders-jilden-cYrMQA7a3Wc-unsplash.jpg")';
 
 } else {
-const video = document.createElement("video");
-
-video.src = "./assets/nightvid.mp4";
-video.autoplay = true;
-video.loop = true;
-video.muted = true;
-video.playsInline = true;
-video.id = "bgVideo";
-
-document.body.prepend(video);
+    document.body.style.backgroundImage = 'url("./assets/night.jpg")';
 }
 }
 ampm()
@@ -153,7 +144,7 @@ taskListArr.forEach((elem)=>{
     <p class="task-description">${elem.description}</p>
     <div class="btn-div">
   
-${!elem.isCompleted?`<button class="completed" data-task-id="${elem.id}">Mark Complete</button>`:`<button class="undo" data-task-id="${elem.id}">Undo complete</button>`}
+${!elem.isCompleted?`<button class="completed" data-task-id="${elem.id}"><i class="fa-solid fa-check"></i> Complete</button>`:`<button class="undo" data-task-id="${elem.id}">Undo complete</button>`}
         <button class="del" data-task-id="${elem.id}">Delete</button>
     </div>
    </div>`
@@ -243,16 +234,14 @@ handleDelete(e)
     if (e.target.classList.contains("completed")) {
 
 handleComplete(e,true)
-showToast("Marked as complete ✅","#15b371")
-
+showToast("Task marked as completed ✅", "#15b371");
 
     }
 
     if (e.target.classList.contains("undo")) {
 
     handleComplete(e,false)
-    showToast("undo complete ✅","#21c1cf")
-
+showToast("Task restored ↩️", "#21c1cf");
 
 }
 
@@ -358,8 +347,7 @@ function renderGoals() {
             Undo
        </button>`
     : `<button class="goal-complete" data-goal-id="${elem.id}">
-            Complete
-       </button>`
+✓ Complete       </button>`
 
 }
 
