@@ -61,7 +61,16 @@ if (ampm === "AM") {
     document.body.style.backgroundImage = 'url("./assets/anders-jilden-cYrMQA7a3Wc-unsplash.jpg")';
 
 } else {
-    document.body.style.backgroundImage = 'url("./assets/night.jpg")';
+const video = document.createElement("video");
+
+video.src = "./assets/nightvid.mp4";
+video.autoplay = true;
+video.loop = true;
+video.muted = true;
+video.playsInline = true;
+video.id = "bgVideo";
+
+document.body.prepend(video);
 }
 }
 ampm()
