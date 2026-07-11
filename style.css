@@ -1928,24 +1928,6 @@ nav span {
 }
 
 
-@media (max-width: 768px){
-
-    .goal-input{
-        flex-direction: column;
-    }
-
-    .goal-input button{
-        width:100%;
-    }
-
-    .goal-item{
-        flex-basis:100%;
-    }
-
-    .sectionGoal{
-        padding:20px;
-    }
-}
 
 
 
@@ -2005,6 +1987,10 @@ flex-basis: 100%;
     color: #fff;
     font-size: 10px;
     font-weight: 500;
+}
+    nav h1 {
+    font-size: 1.4rem;
+
 }
 
 }
@@ -2149,6 +2135,11 @@ text-align: center;
     font-size: 10px;
     font-weight: 500;
 }
+    nav h1 {
+    font-size: 1.3rem;
+
+}
+
 
 }
 
@@ -2179,6 +2170,26 @@ text-align: center;
 }
 .task-div p {
     font-size: 10px;
+}
+    .goal-input{
+        flex-direction: column;
+    }
+
+    .goal-input button{
+        width:100%;
+    }
+
+    .goal-item{
+        flex-basis:100%;
+    }
+
+    .sectionGoal{
+        padding:20px;
+    }
+
+    nav h1 {
+    font-size: 1.1rem;
+
 }
 
 

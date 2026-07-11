@@ -434,12 +434,16 @@ goalList.addEventListener("click", (e) => {
 
     if (e.target.classList.contains("goal-complete")) {
         handleGoalComplete(e, true);
+showToast("Goal completed ✅", "#06D001");
+
         updateGoalProgress()
 
     }
 
     if (e.target.classList.contains("goal-undo")) {
         handleGoalComplete(e, false);
+        showToast("Goal restored ↩️", "#21c1cf");
+
         updateGoalProgress()
 
     }
