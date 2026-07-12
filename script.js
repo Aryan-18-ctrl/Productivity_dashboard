@@ -137,7 +137,8 @@ function addTaskContainer(){
 
 taskListArr.forEach((elem)=>{
 
-    tasklistContainer.innerHTML+=`<div class="task-list"  >
+    tasklistContainer.innerHTML+=`<div class="task-list" style="${elem.isCompleted ? ' border:2px solid #17c4e7;' : ''}"> 
+  
       ${elem.markImportant?'<div class="imp-badge">imp</div>':""}  
 
      <p class="task-text">${elem.task}</p>
@@ -336,8 +337,9 @@ function renderGoals() {
 
     goalDataArr.forEach((elem) => {
         goalList.innerHTML += `
-        <div class="goal-item">
-            <p>${elem.goal}</p>
+<div class="goal-item"
+     style="${elem.isComp ? ' border:2px solid #16e384c5;' : ''}">           
+      <p>${elem.goal}</p>
 
             <div class="goal-btns">
 
